@@ -11,8 +11,7 @@ receives telemetry from the firmware; the local web server only serves the dashb
 
 ![Temperature alarm on the dashboard and Wokwi circuit](docs/assets/warehouse/warehouse-alarm.png)
 
-**[Watch the demo](docs/assets/warehouse/warehouse-demo-web.mp4)** — 4 min 9 s,
-720p, approximately 6 MiB. The recorded Wokwi/Firebase session shows environmental
+**[Watch the demo](docs/assets/warehouse/warehouse-demo-web.mp4)**. The recorded Wokwi/Firebase session shows environmental
 alarms, door monitoring, ACK, fault recovery, SD events and CSV export.
 
 ## Features
