@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Warehouse Monitor · Firebase</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div><p class="eyebrow">WAREHOUSE ENVIRONMENT MONITOR</p><h1>Know what's happening.</h1><p class="subtle">ESP32 telemetry · Simulated sensors and hardware · Firebase</p></div><span id="connection" class="badge">SIGNED OUT</span></header>
+  <main>
+    <section id="login-panel" class="panel"><h2>Open your station</h2><p>Sign in with the dashboard viewer account. Device credentials are entered in Wokwi.</p><form id="login-form"><label>Email<input id="email" type="email" autocomplete="username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" required></label><button id="login">Sign in</button></form></section>
+    <div id="notice" role="status" aria-live="polite">Loading public project configuration…</div>
+    <section id="dashboard" hidden>
+      <div class="toolbar"><div><span id="device-id">warehouse-01</span><p class="subtle" id="last-update">Waiting for telemetry</p></div><div><button id="refresh">Refresh</button><button id="export">Export history CSV</button><button id="logout" class="secondary">Sign out</button></div></div>
+      <p class="subtle" id="delivery">Waiting for delivery timing</p>
+      <div class="metrics">
+        <article class="panel"><p>Temperature</p><strong id="temperature">—</strong><small>Alarm ≥32°C · clears ≤30°C</small></article>
+        <article class="panel"><p>Relative humidity</p><strong id="humidity">—</strong><small>Alarm ≥75% RH · clears ≤70%</small></article>
+        <article class="panel"><p>Warehouse door</p><strong id="door">—</strong><small id="door-duration">Alarm after 10 seconds open</small></article>
+        <article class="panel"><p>Device condition</p><strong id="state">WAITING</strong><small id="alarm-detail">No data received</small></article>
+      </div>
+      <div class="charts"><article class="panel"><div class="chart-heading"><h2>Temperature</h2><span>Last 5 minutes · °C</span></div><svg id="temperature-chart" viewBox="0 0 720 220" role="img" aria-label="Temperature history"></svg></article><article class="panel"><div class="chart-heading"><h2>Humidity</h2><span>Last 5 minutes · %RH</span></div><svg id="humidity-chart" viewBox="0 0 720 220" role="img" aria-label="Humidity history"></svg></article></div>
+      <div class="details"><article class="panel"><h2>Device & storage</h2><dl><dt>Sensor</dt><dd id="sensor">—</dd><dt>SD card</dt><dd id="storage">—</dd><dt>Stored / skipped</dt><dd id="storage-counts">—</dd><dt>Uptime</dt><dd id="uptime">—</dd><dt>Audible alert</dt><dd id="muted">—</dd><dt>Boot session</dt><dd id="boot">—</dd></dl></article><article class="panel"><h2>Recent observations</h2><p class="subtle">Observed upload snapshots. Full local event log remains on SD.</p><ul id="observations"></ul></article></div>
+      <p class="footnote">Read-only dashboard · Realtime Firebase stream with polling fallback · Cloud history holds up to 60 upload snapshots. Missing data is shown as gaps; stale readings are never presented as live.</p>
+    </section>
+  </main><footer>Portfolio simulation · Thresholds are illustrative, not commodity storage standards.</footer>
+  <script type="module" src="app.js"></script>
+</body></html>
