@@ -108,7 +108,7 @@ LIVE indicates fresh device status, even when a sensor is unavailable.
 
 | Path | Purpose |
 | --- | --- |
-| `targets/esp32-wokwi/warehouse-local/` | Final firmware, Wokwi diagram and pinned Arduino libraries |
+| `targets/esp32-wokwi/warehouse-local/` | Firmware, Wokwi diagram and pinned Arduino libraries |
 | `web/warehouse/` | Browser dashboard and blank configuration |
 | `tools/` | Configuration/server, firmware build, source package and compile profile |
 | `firebase/` | Default-deny database Rules |
